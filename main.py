@@ -130,21 +130,60 @@ queue = "queue"
 # print("")
 # print(queue.count("u") + queue.count("e"))
 
-# TODO: scheduling: tues/thurs 5:30 cst
+# scheduling: tues/thurs 5:30 cst
+
+# for word in ["hello", "world"]:
+#     print(word)
 
 
-# Make a number guessing game.
-# User inputs a number until they get it right.
-# Hidden number is randomly generated.
-# input() -> int()
-1
-user_input = input("Input your guess: ")
-
-print(user_input)
-
-print(type(user_input))
+# # Returning values
+# def add(a, b):
+#     return a + b
 
 
+# result = add(5, 2)
+
+# print(result) # 7
+
+
+# for char in "hello":
+#     print(char)
 
 
 
+
+# Write a function hasChar(str, char) that returns whether a string has a given character in it
+# Example 1: hasChar("hello", "e") -> return True
+# Example 2: hasChar("hello", "z") -> return False
+# Iterate over the characters in the string
+the_string = "hello"
+
+def hasChar(string, char):
+    for c in string:
+        if c == char:
+            return True
+    
+    return False
+
+
+# word = input("Word: ")
+# char = input("Letter to find: ")
+# print(hasChar(word, char))
+
+"a".upper() # A
+
+
+def capitalize(word: str):
+    word.upper()
+    print(word)
+
+caps = input("hello")
+capitalize(caps)
+
+
+# write a function findMaximum(array) that finds the highest number in an array of numbers
+# Example: findMaximum([1, 2, 3]) => return 3
+# Example: findMaximum([]) => return "no"
+
+
+CYA
