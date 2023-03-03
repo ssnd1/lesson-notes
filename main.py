@@ -174,16 +174,125 @@ def hasChar(string, char):
 
 
 def capitalize(word: str):
-    word.upper()
-    print(word)
+    print(word.upper())
 
-caps = input("hello")
-capitalize(caps)
+caps = "hello"
+# capitalize(caps)
 
 
 # write a function findMaximum(array) that finds the highest number in an array of numbers
 # Example: findMaximum([1, 2, 3]) => return 3
-# Example: findMaximum([]) => return "no"
+# Example: findMaximum([]) => return None
+array = [1, 6, 89, 102, 47, 88, 405, 156, 85]
+
+def findMaximum(array):
+    if len(array) == 0:
+        return None
+    
+    highest = array[0]
+    for num in array:
+        if num > highest:
+            highest = num
+    return highest
 
 
-CYA
+
+
+
+
+# Object Oriented Programming
+#
+
+
+class Animal:
+    def __init__(self, name: str, age: int, kind: str):
+        self.name: str = name
+        self.age: int = age
+        self.kind: str = kind
+    
+    def noise():
+        pass
+    
+    
+    def who_am_i(self):
+        print(f"I am {self.name} the really lazy {self.kind} of age {self.age}!")
+
+
+
+# Dog extends Animal -> Dog is a subclass of Animal and inherits all methods/variables
+class Dog(Animal):
+    def __init__(self, name: str, age: int):
+        super().__init__(name, age, "dog")
+        self.noise()
+
+    def noise(self):
+        print(f"{self.name} says: woof")
+
+
+class Cat(Animal):
+    num_cats = 0
+    cats = []
+
+    def __init__(self, name: str, age: int):
+        super().__init__(name, age, "cat")
+        Cat.num_cats += 1
+        Cat.cats.append(self)
+        self.noise()
+
+    def noise(self):
+        print(f"{self.name} says: meow")
+    
+    @staticmethod
+    def big_noise():
+        for cat in Cat.cats:
+            cat.noise()
+    
+    @staticmethod
+    def get_num_cats():
+        return Cat.num_cats
+
+
+
+
+
+# pop = Cat("pop", 2)
+# # pop.noise()
+# # pop.who_am_i()
+# lucy = Cat("Lucy", 3)
+# Cat.big_noise()
+# Juicy = Cat("Juicy", 37)
+# print(Cat.get_num_cats())
+
+
+# spike = Dog("spike", 5)
+# spike.who_am_i()
+# cuddles_the_dog_that_cuddles_you_a_lot = Dog("cuddles_the_dog_that_cuddles_you_a_lot", 1047) #fly years
+# cuddles_the_dog_that_cuddles_you_a_lot.noise()
+
+
+# create a class Person, every class needs __init__
+class Person:
+    def __init__(self, name: str, age: int, shirt_color: str):
+        self.name = name
+        self.age = age
+        self.shirt_color = shirt_color
+    
+    def is_cool(self):
+        if self.age > 16:
+            print(True)
+        else:
+            print(False)
+    
+    def __str__(self):
+        return f"{self.name} of age {self.age}, with shirt color of {self.shirt_color}"
+
+braeden = Person("Braeden", 20, "White")
+eli = Person("Eli", 11, "Black")
+print(braeden)
+print(f"{eli} and his name is pronounced \"EL-EEh\"")
+
+braeden.is_cool()
+
+
+# Create additional classes for Animal, expand Animal with more functions
+# Example: old() if age > 50 print I'm really old 
